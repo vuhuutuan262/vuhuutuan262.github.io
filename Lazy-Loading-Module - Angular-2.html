@@ -1,0 +1,47 @@
+<h1>Lazy Loading Module - Angular 2</h1>
+
+<h2>1. Vấn đề</h2>
+
+<hr>
+Cấu trúc một simple app của chúng ta sẽ là như thế này:
+
+<ul>
+  <li>
+    Chúng ta sẽ có một trang Home và trang Elements. Trang Elements sẽ chứa hết tất cả các components của bootstrap Bootstrap components. Đương nhiên trang Elements sẽ rất nặng, chủ đích đễ dễ thấy dự khác biệt sau khi áp dụng các kĩ thuật thô Apply lazy load cho Element component
+  </li>
+  <li>
+    Đầu tiền chúng ta sẽ tách Elements component ra là một module riêng (Lưu ý: Một module có thể chứa một hoặc nhiều component nhé). Trong thực tế chúng ta nên module lại nhiều component cùng chung 1 chức năng.
+  </li>
+  <li>
+    Ví dụ như module cho thông tin user (các component sửa thông tin, đổi mật khẩu, xem lịch sử,…) nó sẽ không phải lúc nào cũng cần tải lên để người dùng sử dụng. Chúng ta sẽ module nó và chỉ load khi nào người dùng gọi đến nó.
+  </li>
+</ul>
+
+<pre style="display: block; margin-top: 0; margin-bottom: 1rem; font-size: 90%; color: #292b2c;">
+  <code class="language-JavaScript">
+    import { NgModule, ModuleWithProviders } from '@angular/core';
+    import { CommonModule } from '@angular/common';
+    import { Routes, RouterModule } from '@angular/router';
+    import { ElementsComponent } from './elements.component';
+
+    //Định nghĩa router riêng cho module này
+    const routing: Routes = [
+      { path: '', component: ElementsComponent }
+    ];
+
+    //forChild -> Vì router này sẽ được load như một router con
+    //cho nên chúng ta định nghĩa forChild cho router này
+    const Routing: ModuleWithProviders = RouterModule.forChild(routing);
+
+    @NgModule({
+      imports: [
+        CommonModule,
+        Routing
+      ],
+      declarations: [
+        ElementsComponent
+      ]
+    })
+    export class ElementsModule { }
+  </code>
+</pre>
