@@ -7,7 +7,7 @@
     <header class="notepad-site-head">
       <div class="notepad-site-head-menu">
         <a class="notepad-blog-logo" href="">
-          <img src="{{ site.url }}/images/{{ site.logo }}" alt="Blog Logo" />
+          <img src="/images/{{ site.logo }}" alt="Blog Logo" />
         </a>
         <div class="notepad-blog-menu">
           <div class="notepad-mobile-menu show-for-small">
@@ -26,7 +26,7 @@
                 {% endif %}
               </li>
             {% endfor %}
-             <li><a href="{{ site.url }}/feed.xml" title="Atom/RSS feed"><i class="icon-rss"></i> Feed</a></li>
+             <li><a href="/feed.xml" title="Atom/RSS feed"><i class="icon-rss"></i> Feed</a></li>
           </ul>
         </div>
         <div class="clearfix"></div>
@@ -38,7 +38,9 @@
             {{ site.title }}
           </span>
           </h1>
-          <h2 class="notepad-blog-description">{{ site.description }}</h2>
+          <h2 class="notepad-blog-description">
+            {{ site.description }}
+          </h2>
       </div>
     </header>
     <main class="notepad-content" role="main">
