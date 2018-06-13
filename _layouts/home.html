@@ -6,7 +6,7 @@
   <body class="home-template" itemscope itemtype="http://schema.org/WebPage">
     <header class="notepad-site-head">
       <div class="notepad-site-head-menu">
-        <a class="notepad-blog-logo" href="">
+        <a class="notepad-blog-logo" href="/">
           <img src="/images/{{ site.logo }}" alt="Blog Logo" />
         </a>
         <div class="notepad-blog-menu">
@@ -19,11 +19,7 @@
             </li>
             {% for link in site.links %}
               <li>
-                {% if link.external %}
-                  <a href="{{ link.url }}">{{ link.title }}</a>
-                {% else %}
-                  <a href="{{ site.url }}{{ link.url }}">{{ link.title }}</a>
-                {% endif %}
+                <a href="{{ link.url }}">{{ link.title }}</a>
               </li>
             {% endfor %}
              <li><a href="/feed.xml" title="Atom/RSS feed"><i class="icon-rss"></i> Feed</a></li>
