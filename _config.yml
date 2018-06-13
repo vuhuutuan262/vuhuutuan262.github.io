@@ -1,7 +1,7 @@
 title:            vuhuutuan262.github.io
 description:      "I'm a Ruby on Rails Developer"
 logo:             logo.png
-disqus_shortname: vuhuutuan
+disqus_url:       https://vuhuutuan262.github.io/assets/js/disqus.js
 share:            true
 dropcap:			true
 url:        	  /vuhuutuan262.github.io
