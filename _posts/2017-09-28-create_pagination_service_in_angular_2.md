@@ -24,7 +24,7 @@ Mình làm với Ruby On Rails nên mình sẽ làm demo sử dụng gem Kaminar
 
 ### Follow sẽ như sau
 
-[follow](/images/posts/pagination_angular_2/follow_pagination_service.jpg)
+![follow](/images/posts/pagination_angular_2/follow_pagination_service.jpg)
 
 ### Đầu tiên sẽ tạo 1 component tạo view và sử lý chung: 
 
@@ -41,7 +41,11 @@ Mình làm với Ruby On Rails nên mình sẽ làm demo sử dụng gem Kaminar
 ### File view pagination.component.html
 
 ```html
-
+  <ul *ngFor="let page of pages" class="pagination">
+    <li (click)="selectPagination(page)">
+      {{ page }}
+    </li>
+  </ul>
 ```
 
 Xây tạm xong phần view của pagination
