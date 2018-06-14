@@ -4,6 +4,10 @@
     {% include head.html %}
     {% if site.dropcap %}
       <style type="text/css">
+        .notepad-post-title h1 {
+          color: "{{ page.titlecolor }}";
+        }
+
         @media only screen and (min-width:43.75em) {
           .notepad-post-content div>p:first-child:first-letter {
             float:left;
