@@ -1,13 +1,13 @@
 ---
 layout: page
 permalink: /about/index.html
-title: About-me
+title: Vũ Hữu Tuấn
 tags: [About-me]
 chart: true
 ---
 <figure>
   <img src="/images/avatar.jpg" alt="Vu Huu Tuan">
-  <figcaption>Vũ Hữu Tuấn</figcaption>
+  <figcaption>Avatar của mình đó!!</figcaption>
 </figure>
 
 **Hết rồi, không còn gì để nói nữa**
