@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Lazy Loading Module - Angular 2"
+titlecolor: goldenrod
 description: "Tìm hiểu về Loading Module trong Angular 2"
 category: angular2
 modified: 2018-06-11
@@ -18,7 +19,7 @@ imagefile: lazy_loading_module_angular
 * Đầu tiền chúng ta sẽ tách Elements component ra là một module riêng (Lưu ý: Một module có thể chứa một hoặc nhiều component nhé). Trong thực tế chúng ta nên module lại nhiều component cùng chung 1 chức năng.
 * Ví dụ như module cho thông tin user (các component sửa thông tin, đổi mật khẩu, xem lịch sử,…) nó sẽ không phải lúc nào cũng cần tải lên để người dùng sử dụng. Chúng ta sẽ module nó và chỉ load khi nào người dùng gọi đến nó.
 
-```javascript
+```code
   import { NgModule, ModuleWithProviders } from '@angular/core';
   import { CommonModule } from '@angular/common';
   import { Routes, RouterModule } from '@angular/router';
@@ -47,7 +48,7 @@ imagefile: lazy_loading_module_angular
 
 ### Các bạn chú ý chỗ loadChildren nhé. Đại loại khi trỏ tới link elements nó sẽ load module từ Elements Module.
 
-```javascript
+```code
   import { BrowserModule } from '@angular/platform-browser';
   import { NgModule, ModuleWithProviders } from '@angular/core';
   import { FormsModule } from '@angular/forms';
@@ -96,12 +97,12 @@ imagefile: lazy_loading_module_angular
 
 1. ### Add PreloadAllModules từ @angular/router
 
-```javascript
+```code
   import { Routes, RouterModule, PreloadAllModules } from '@angular/router';
 ```
 
 2. ### Định nghĩa lại cho router
-```javascript
+```code
   const Routing: ModuleWithProviders = RouterModule.forRoot(routing,
    { preloadingStrategy: PreloadAllModules });
 ```
