@@ -3,7 +3,7 @@ layout: post
 title: "Lazy Loading Module - Angular 2"
 description: "Tìm hiểu về Loading Module trong Angular 2"
 category: angular2
-modified: 2018-06-11
+modified: 2017-11-11
 tags: [angular2]
 comments: true
 share: true
