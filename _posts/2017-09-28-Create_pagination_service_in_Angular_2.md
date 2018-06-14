@@ -1,10 +1,9 @@
 ---
 layout: post
 title: "Tạo Service Pagination trong Angular 2"
-titlecolor: goldenrod
 description: "Tạo Service Pagination trong Angular 2"
 category: angular2
-modified: 2018-06-11
+modified: 2017-09-28
 tags: [angular2]
 comments: true
 share: true

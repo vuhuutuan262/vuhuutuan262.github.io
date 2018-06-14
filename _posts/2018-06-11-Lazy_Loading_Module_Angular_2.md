@@ -1,7 +1,6 @@
 ---
 layout: post
 title: "Lazy Loading Module - Angular 2"
-titlecolor: goldenrod
 description: "Tìm hiểu về Loading Module trong Angular 2"
 category: angular2
 modified: 2018-06-11
