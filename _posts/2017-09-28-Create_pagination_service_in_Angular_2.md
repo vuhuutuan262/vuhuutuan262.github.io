@@ -35,7 +35,7 @@ Mình làm với Ruby On Rails nên mình sẽ làm demo sử dụng gem Kaminar
   })
 ```
 
-### File view **pagination.component.html**
+### File view pagination.component.html
 
 ```html
   <ul *ngFor="let page of pages" class="pagination">
