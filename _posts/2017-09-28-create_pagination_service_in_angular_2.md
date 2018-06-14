@@ -24,7 +24,7 @@ Mình làm với Ruby On Rails nên mình sẽ làm demo sử dụng gem Kaminar
 
 ### Follow sẽ như sau
 
-![follow](/images/posts/pagination_angular_2/follow_pagination_service.jpg)
+[follow](/images/posts/pagination_angular_2/follow_pagination_service.jpg)
 
 ### Đầu tiên sẽ tạo 1 component tạo view và sử lý chung: 
 
@@ -41,9 +41,7 @@ Mình làm với Ruby On Rails nên mình sẽ làm demo sử dụng gem Kaminar
 ### File view pagination.component.html
 
 ```html
-  <ul *ngFor="let page of pages" class="pagination">
-    <li (click)="selectPagination(page)">{{ page }}</li>
-  </ul>
+
 ```
 
 Xây tạm xong phần view của pagination
@@ -51,7 +49,33 @@ Xây tạm xong phần view của pagination
 Bây giờ sẽ sang phần **service paginate**
 
 ```typescript
-
+  getPagesInPaginate(pages, currentPage:  number = 1,
+   pageDistance: number = valSetting.DEFAULT_PAGE_DISTANCE,
+   pageSize: number = valSetting.DEFAULT_PAGE_SIZE) {
+  
+    const listPages = [];
+    const totalPages: number = Math.ceil(pages / pageSize);
+    let startPage: number, endPage: number;
+  
+    if (totalPages < 2 * pageDistance) {
+        startPage = 1;
+        endPage = totalPages;
+      } else {
+        if (currentPage <= pageDistance) {
+          startPage = 1;
+          endPage = 2 * pageDistance + 1;
+        } else if (currentPage + pageDistance > totalPages) {
+          startPage = totalPages - 2 * pageDistance;
+          endPage = totalPages;
+        } else {
+          startPage = currentPage - pageDistance;
+          endPage = currentPage + pageDistance;
+        }
+      }
+    for (let i = startPage ; i <= endPage; i++) {
+      listPages.push(i);
+    }
+  }
 ```
 
 **service sẽ trả ra 1 Array có số thứ tự của page( trên view sẽ lấy ra Array này để hiển thị pagination )** 
