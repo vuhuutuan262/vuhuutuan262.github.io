@@ -636,3 +636,12 @@ iframe {
     vertical-align: super;
     color: black;
 }
+
+pre.highlight{
+  padding: 16px;
+  overflow: auto;
+  font-size: 85%;
+  line-height: 1.45;
+  background-color: #f6f8fa;
+  border-radius: 3px;
+}
