@@ -130,15 +130,30 @@ main, .notepad-share-icons, .notepad-disqus {
             border-bottom: 0.1875rem solid transparent;
             width: auto;
             height: auto; }
-            .notepad-blog-menu ul li a:hover {
-              :before {
-                text-shadow: 4px 0 rgba(red,0.7);
-                animation: glitch-loop-1 0.8s infinite ease-in-out alternate-reverse;
-              }
-              :after {
-                text-shadow: -5px 0 rgba(blue,0.7);
-                animation: glitch-loop-2 0.8s infinite ease-in-out alternate-reverse;
-              }
+            .notepad-blog-menu ul li a:before, .notepad-blog-menu ul li a:after {
+              opacity: 0;
+              -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+              transition: opacity 0.35s, transform 0.35s;
+            }
+            .notepad-blog-menu ul li a:before {
+              border-left: 1px solid;
+              border-right: 1px solid;
+              -webkit-transform: scale(1,0);
+              transform: scale(1,0);
+            }
+
+            .notepad-blog-menu ul li a:after {
+              border-bottom: 1px solid;
+              border-top: 1px solid;
+              -webkit-transform: scale(0,1);
+              transform: scale(0,1);
+            }
+
+            .notepad-blog-menu ul li a:hover:after,
+            .notepad-blog-menu ul li a:hover:before {
+              opacity: 1;
+              -webkit-transform: scale(1);
+              transform: scale(1);
             }
   }
 
