@@ -12,7 +12,7 @@ imagefile: rails
 featured: true
 ---
 
-##Giới thiệu: Trong vài ngày gần đây nảy sinh 1 vấn đề nhỏ với việc truy vấn dư thừa, sau khi đã giải quyết được vấn đề mình viết bài viết này.
+## Trong vài ngày gần đây nảy sinh 1 vấn đề nhỏ với việc truy vấn dư thừa, sau khi đã giải quyết được vấn đề mình viết bài viết này.
 
 ## Vấn đề đặt ra:
 *Giả sử như bạn có một menu gồm list các category kèm theo là số phần tử trong mỗi category đó, và bạn luôn hiển thị nó, tuy nhiên số phần tử trong mỗi category biến động theo khoảng thời gian nhất định (30 phút, 2h, hoặc có thể là 1 ngày, etc). Việc truy vấn để tính size trong category có lẽ sẽ lãng phí, vì thường chúng ta sẽ đặt hàm tính này trong before_fillter (tùy trường hợp thì có thể giải quyết bài toán này với counter cache hoặc không thể) và mỗi lần request thì việc truy vấn xuống DB sẽ xảy ra. Các bạn có thể xem hình để hình dùng rõ hơn*.
@@ -22,9 +22,9 @@ featured: true
 ==> **Vấn đề này có thể được giải quyết với Cache key trên Rails dùng Memory Store.**
 
 ### Kỹ thuật:
-– Việc ta hi sinh memory để chứa 1 vài biến sẽ tốt hơn nhiều so với việc truy suất db để tính toán và trả về giá trị (tốt về thuật toán và cả tốc độ, etc…)
+* Việc ta hi sinh memory để chứa 1 vài biến sẽ tốt hơn nhiều so với việc truy suất db để tính toán và trả về giá trị (tốt về thuật toán và cả tốc độ, etc…)
 
-– Hiện nay memcache đang được sử dụng ở hầu hết các site lớn, nên việc chúng ta áp dụng vào các ứng dụng không có gì là độc đáo nữa, mà dần trở thành 1 việc nên làm.
+* Hiện nay memcache đang được sử dụng ở hầu hết các site lớn, nên việc chúng ta áp dụng vào các ứng dụng không có gì là độc đáo nữa, mà dần trở thành 1 việc nên làm.
 
 ### Cách thực hiện:
 
@@ -33,18 +33,19 @@ Mình sẽ trình bày code của mình làm ví dụ thực tế để có th�
 – Trước tiên muốn thực hiện cache cần vào application.rb và thêm dòng sau:
 
 
-```Ruby
+```ruby
 	
 config.cache_store = :memory_store
 ```
+
 Đây là default thì cache sẽ chiếm 32 MB, nếu bạn muốn thêm có thể thêm option vào:
-```Ruby
+```ruby
 config.cache_store = :memory_store, {size: 64.megabytes}
 ```
 
 
 Đoạn code lúc đầu khi thực hiện load menu (gây lãng phí) như sau:
-```Ruby 
+```ruby 
 def load_menu
    @tags_menu = {}
    tags = Tag.all
@@ -53,9 +54,10 @@ def load_menu
    end
    @tags_menu = @tags_menu.to_a
  end
- ```
- Đoạn code sau khi dùng cache (cách read, write bình thường):
- ```Ruby
+```
+
+Đoạn code sau khi dùng cache (cách read, write bình thường):
+```ruby
  def load_menu
     @tags_menu = {}
     tags = Tag.all
@@ -69,8 +71,9 @@ def load_menu
     end
     @tags_menu = @tags_menu.to_a
   end
-  ```
-  OK. Vấn đề đã được giải quyết rồi, giờ mình giải thích một số để các bạn hiểu thêm về phương thức read, write, fetch, delete.
+```
+  
+OK. Vấn đề đã được giải quyết rồi, giờ mình giải thích một số để các bạn hiểu thêm về phương thức read, write, fetch, delete.
 
 Như tên gọi của chúng
 
@@ -84,7 +87,7 @@ Vậy fetch là gì nhỉ?
 
 giờ mình sử dụng block cho **fetch** như sau:
 
-```Ruby
+```ruby
  def load_menu
     @tags_menu = {}
     tags = Tag.all
@@ -96,6 +99,6 @@ giờ mình sử dụng block cho **fetch** như sau:
     end
     @tags_menu = @tags_menu.to_a
   end
-  ```
+```
   
-  * Còn **delete** thì quá rõ rồi, xóa key trong cache bạn nhé, phương thức nhận đối số truyền vào là key
+* Còn **delete** thì quá rõ rồi, xóa key trong cache bạn nhé, phương thức nhận đối số truyền vào là key
