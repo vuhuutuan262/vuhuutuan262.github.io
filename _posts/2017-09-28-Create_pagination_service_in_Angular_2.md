@@ -13,6 +13,7 @@ featured: true
 ---
 
 ## Vấn đề
+
 Mình mới làm quen với angular 1 thời gian, phải sử lý đến pagination.
 
 Những thư viện của angular đều là load tất cả item vào pagination rồi xử lý, nên mình quyết định custom 1 cái service pagination dùng cho sướng ..
@@ -37,7 +38,7 @@ Mình làm với Ruby On Rails nên mình sẽ làm demo sử dụng gem Kaminar
 
 ### File view pagination.component.html
 
-```html
+```typescript
   <ul *ngFor="let page of pages" class="pagination">
     <li (click)="selectPagination(page)">{{ page }}</li>
   </ul>
