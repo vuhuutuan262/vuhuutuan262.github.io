@@ -43,7 +43,7 @@ Mình làm với Ruby On Rails nên mình sẽ làm demo sử dụng gem Kaminar
 ```html
   <ul *ngFor="let page of pages" class="pagination">
     <li (click)="selectPagination(page)">
-      {{ page }}
+      page
     </li>
   </ul>
 ```
