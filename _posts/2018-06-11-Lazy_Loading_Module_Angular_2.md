@@ -10,6 +10,7 @@ comments: true
 share: true
 imagefeature: angular_4.jpg
 imagefile: lazy_loading_module_angular
+featured: true
 ---
 
 ## Vấn đề
@@ -19,7 +20,7 @@ imagefile: lazy_loading_module_angular
 * Đầu tiền chúng ta sẽ tách Elements component ra là một module riêng (Lưu ý: Một module có thể chứa một hoặc nhiều component nhé). Trong thực tế chúng ta nên module lại nhiều component cùng chung 1 chức năng.
 * Ví dụ như module cho thông tin user (các component sửa thông tin, đổi mật khẩu, xem lịch sử,…) nó sẽ không phải lúc nào cũng cần tải lên để người dùng sử dụng. Chúng ta sẽ module nó và chỉ load khi nào người dùng gọi đến nó.
 
-```ruby
+```javascript
   import { NgModule, ModuleWithProviders } from '@angular/core';
   import { CommonModule } from '@angular/common';
   import { Routes, RouterModule } from '@angular/router';
@@ -48,7 +49,7 @@ imagefile: lazy_loading_module_angular
 
 ### Các bạn chú ý chỗ loadChildren nhé. Đại loại khi trỏ tới link elements nó sẽ load module từ Elements Module.
 
-```ruby
+```javascript
   import { BrowserModule } from '@angular/platform-browser';
   import { NgModule, ModuleWithProviders } from '@angular/core';
   import { FormsModule } from '@angular/forms';
@@ -97,12 +98,12 @@ imagefile: lazy_loading_module_angular
 
 1. ### Add PreloadAllModules từ @angular/router
 
-```ruby
+```javascript
   import { Routes, RouterModule, PreloadAllModules } from '@angular/router';
 ```
 
 2. ### Định nghĩa lại cho router
-```ruby
+```javascript
   const Routing: ModuleWithProviders = RouterModule.forRoot(routing,
    { preloadingStrategy: PreloadAllModules });
 ```
