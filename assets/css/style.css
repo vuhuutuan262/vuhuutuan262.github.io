@@ -131,7 +131,16 @@ main, .notepad-share-icons, .notepad-disqus {
             width: auto;
             height: auto; }
             .notepad-blog-menu ul li a:hover {
-              border-bottom: 0.1875rem solid #e51843; } }
+              :before {
+                text-shadow: 4px 0 rgba(red,0.7);
+                animation: glitch-loop-1 0.8s infinite ease-in-out alternate-reverse;
+              }
+              :after {
+                text-shadow: -5px 0 rgba(blue,0.7);
+                animation: glitch-loop-2 0.8s infinite ease-in-out alternate-reverse;
+              }
+            }
+  }
 
 .notepad-site-head .notepad-site-head-menu {
   background: white; }
