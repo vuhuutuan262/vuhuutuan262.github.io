@@ -133,13 +133,11 @@ main, .notepad-share-icons, .notepad-disqus {
       text-decoration: none;
       position: relative;
     }
-    .notepad-blog-menu ul li a:hover {
+    .notepad-blog-menu ul li:hover {
       -webkit-animation: text-hover 3s;
       -webkit-animation-iteration-count: infinite;
       animation: text-hover 3s;
       animation-iteration-count: infinite;
-      -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
-      transition: opacity 0.35s, transform 0.35s;
     }
   }
 
@@ -192,8 +190,49 @@ main, .notepad-share-icons, .notepad-disqus {
 .notepad-site-head .notepad-site-head-content {
   width: 100%;
   text-align: center;
-  background-color: black;
-  background-size: cover; }
+  background-size: cover;
+  -webkit-animation: slide-image 20s;
+  -webkit-animation-iteration-count: infinite;
+  animation: slide-image 20s;
+  animation-iteration-count: infinite;
+}
+
+@-webkit-keyframes slide-image {
+  0% {
+    background-image: url('/images/slide/bg1.jpg')
+  }
+  25% {
+    background-image: url('/images/slide/bg2.jpg')
+  }
+  50% {
+    background-image: url('/images/slide/bg3.jpg')
+  }
+  75% {
+    background-image: url('/images/slide/bg4.png')
+  }
+  100% {
+    background-image: url('/images/slide/bg5.jpg')
+  }
+}
+
+@keyframes slide-image {
+  0% {
+    background-image: url('/images/slide/bg1.jpg')
+  }
+  25% {
+    background-image: url('/images/slide/bg2.jpg')
+  }
+  50% {
+    background-image: url('/images/slide/bg3.jpg')
+  }
+  75% {
+    background-image: url('/images/slide/bg4.png')
+  }
+  100% {
+    background-image: url('/images/slide/bg5.jpg')
+  }
+}
+
   .notepad-site-head .notepad-site-head-content.with-bg-cover {
     background-color: rgba(0, 0, 0, 0.7); }
   .notepad-site-head .notepad-site-head-content .notepad-site-head-title-bg {
