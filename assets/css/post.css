@@ -641,3 +641,32 @@ pre {
   background-color: #f6f8fa;
   border-radius: 3px;
 }
+
+#toTop {
+  background: #b71b52;
+  left: 90%;
+  bottom: 148px;
+  transform: translateX(-50%);
+}
+
+#toTop {
+  padding: 5px 3px;
+  background: #80817e;
+  color: #ffffff;
+  position: fixed;
+  bottom: 176px;
+  width: 60px;
+  height: 60px;
+  right: 126px;
+  display: none;
+  text-align: center;
+  cursor: pointer;
+  font-size: 10px;
+  font-weight: 500;
+  z-index: 1000;
+}
+
+#toTop i {
+  display: block;
+  font-size: 20px;
+}
