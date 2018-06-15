@@ -206,18 +206,22 @@ main, .notepad-share-icons, .notepad-disqus {
   -o-transition: margin 1s ease;
   -ms-transition: margin 1s ease;
   transition: margin 1s ease;
-  -webkit-animation: slide-image 20s;
+  -webkit-animation: slide-image 10s;
   -webkit-animation-iteration-count: infinite;
-  animation: slide-image 20s;
+  animation: slide-image 10s;
   animation-iteration-count: infinite;
 }
 
 @-webkit-keyframes slide-image {
-  margin-top: -200px;
+  0% {background-position: top}
+  50% {background-position: bottom}
+  100% {background-position: top}
 }
 
 @keyframes slide-image {
-  margin-top: -200px;
+  0% {background-position: top}
+  50% {background-position: bottom}
+  100% {background-position: top}
 }
 
   .notepad-site-head .notepad-site-head-content.with-bg-cover {
