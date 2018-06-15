@@ -9,5 +9,18 @@
 <script src="/assets/js/vendor/nprogress.js"></script>
 <script>
   $(document).foundation();
+  $(document).ready(function () {
+    jQuery(window).scroll(function () {
+      if (jQuery(this).scrollTop()) {
+        jQuery("#toTop").fadeIn();
+      } else {
+        jQuery("#toTop").fadeOut();
+      }
+    });
+
+    jQuery(document).on("click", "#toTop", function () {
+      jQuery("html, body").animate({scrollTop: 0}, 500);
+    });
+  });
 </script>
 
