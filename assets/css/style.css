@@ -129,9 +129,41 @@ main, .notepad-share-icons, .notepad-disqus {
       display: inline-block;
       border-bottom: 0.1875rem solid transparent;
       width: auto;
-      height: auto; }
+      height: auto;
+      text-decoration: none;
+      position: relative;
+    }
     .notepad-blog-menu ul li a:hover {
-      border-bottom: 0.1875rem solid #e51843; } }
+      -webkit-animation: text-hover 3s;
+      -webkit-animation-iteration-count: infinite;
+      animation: text-hover 3s;
+      animation-iteration-count: infinite;
+      -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+      transition: opacity 0.35s, transform 0.35s;
+    }
+  }
+
+@-webkit-keyframes text-hover {
+  from {
+    transform: scale(0,1);
+    -webkit-transform: scale(0,1);
+  }
+  to {
+    transform: scale(1);
+    -webkit-transform: scale(1);
+  }
+}
+
+@keyframes text-hover {
+  from {
+    transform: scale(0,1);
+    -webkit-transform: scale(0,1);
+  }
+  to {
+    transform: scale(1);
+    -webkit-transform: scale(1);
+  }
+}
 
 .notepad-site-head .notepad-site-head-menu {
   background: white; }
