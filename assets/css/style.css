@@ -134,32 +134,40 @@ main, .notepad-share-icons, .notepad-disqus {
       position: relative;
     }
     .notepad-blog-menu ul li a:hover {
-      -webkit-animation: text-hover 3s;
+      -webkit-animation: text-hover 6s;
       -webkit-animation-iteration-count: infinite;
-      animation: text-hover 3s;
+      animation: text-hover 6s;
       animation-iteration-count: infinite;
     }
   }
 
 @-webkit-keyframes text-hover {
-  from {
+  0% {
     transform: scale(1);
     -webkit-transform: scale(1);
   }
-  to {
+  50% {
     transform: scale(0, 1);
     -webkit-transform: scale(0, 1);
+  }
+  100% {
+    transform: scale(1);
+    -webkit-transform: scale(1);
   }
 }
 
 @keyframes text-hover {
-  from {
+  0% {
     transform: scale(1);
     -webkit-transform: scale(1);
   }
-  to {
-    transform: scale(0,1);
-    -webkit-transform: scale(0,1);
+  50% {
+    transform: scale(0, 1);
+    -webkit-transform: scale(0, 1);
+  }
+  100% {
+    transform: scale(1);
+    -webkit-transform: scale(1);
   }
 }
 
@@ -198,39 +206,61 @@ main, .notepad-share-icons, .notepad-disqus {
 }
 
 @-webkit-keyframes slide-image {
-  0% {
-    background-image: url('/images/slide/bg1.jpg')
-  }
-  25% {
-    background-image: url('/images/slide/bg2.jpg')
-  }
-  50% {
-    background-image: url('/images/slide/bg3.jpg')
-  }
-  75% {
-    background-image: url('/images/slide/bg4.jpg')
-  }
-  100% {
-    background-image: url('/images/slide/bg5.jpg')
-  }
+  0% {background-image: url('/images/slide/1-min.png')}
+  4% {background-image: url('/images/slide/2-min.png')}
+  8% {background-image: url('/images/slide/3-min.png')}
+  12% {background-image: url('/images/slide/4-min.png')}
+  16% {background-image: url('/images/slide/5-min.png')}
+  20% {background-image: url('/images/slide/6-min.png')}
+  24% {background-image: url('/images/slide/7-min.png')}
+  28% {background-image: url('/images/slide/8-min.png')}
+  32% {background-image: url('/images/slide/9-min.png')}
+  36% {background-image: url('/images/slide/10-min.png')}
+  40% {background-image: url('/images/slide/11-min.png')}
+  44% {background-image: url('/images/slide/12-min.png')}
+  48% {background-image: url('/images/slide/13-min.png')}
+  52% {background-image: url('/images/slide/13-min.png')}
+  56% {background-image: url('/images/slide/12-min.png')}
+  60% {background-image: url('/images/slide/11-min.png')}
+  64% {background-image: url('/images/slide/10-min.png')}
+  68% {background-image: url('/images/slide/9-min.png')}
+  72% {background-image: url('/images/slide/8-min.png')}
+  76% {background-image: url('/images/slide/7-min.png')}
+  80% {background-image: url('/images/slide/6-min.png')}
+  84% {background-image: url('/images/slide/5-min.png')}
+  88% {background-image: url('/images/slide/4-min.png')}
+  92% {background-image: url('/images/slide/3-min.png')}
+  96% {background-image: url('/images/slide/2-min.png')}
+  100% {background-image: url('/images/slide/1-min.png')}
 }
 
 @keyframes slide-image {
-  0% {
-    background-image: url('/images/slide/bg1.jpg')
-  }
-  25% {
-    background-image: url('/images/slide/bg2.jpg')
-  }
-  50% {
-    background-image: url('/images/slide/bg3.jpg')
-  }
-  75% {
-    background-image: url('/images/slide/bg4.jpg')
-  }
-  100% {
-    background-image: url('/images/slide/bg5.jpg')
-  }
+  0% {background-image: url('/images/slide/1-min.png')}
+  4% {background-image: url('/images/slide/2-min.png')}
+  8% {background-image: url('/images/slide/3-min.png')}
+  12% {background-image: url('/images/slide/4-min.png')}
+  16% {background-image: url('/images/slide/5-min.png')}
+  20% {background-image: url('/images/slide/6-min.png')}
+  24% {background-image: url('/images/slide/7-min.png')}
+  28% {background-image: url('/images/slide/8-min.png')}
+  32% {background-image: url('/images/slide/9-min.png')}
+  36% {background-image: url('/images/slide/10-min.png')}
+  40% {background-image: url('/images/slide/11-min.png')}
+  44% {background-image: url('/images/slide/12-min.png')}
+  48% {background-image: url('/images/slide/13-min.png')}
+  52% {background-image: url('/images/slide/13-min.png')}
+  56% {background-image: url('/images/slide/12-min.png')}
+  60% {background-image: url('/images/slide/11-min.png')}
+  64% {background-image: url('/images/slide/10-min.png')}
+  68% {background-image: url('/images/slide/9-min.png')}
+  72% {background-image: url('/images/slide/8-min.png')}
+  76% {background-image: url('/images/slide/7-min.png')}
+  80% {background-image: url('/images/slide/6-min.png')}
+  84% {background-image: url('/images/slide/5-min.png')}
+  88% {background-image: url('/images/slide/4-min.png')}
+  92% {background-image: url('/images/slide/3-min.png')}
+  96% {background-image: url('/images/slide/2-min.png')}
+  100% {background-image: url('/images/slide/1-min.png')}
 }
 
   .notepad-site-head .notepad-site-head-content.with-bg-cover {
