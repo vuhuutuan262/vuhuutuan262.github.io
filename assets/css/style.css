@@ -199,6 +199,13 @@ main, .notepad-share-icons, .notepad-disqus {
   width: 100%;
   text-align: center;
   background-size: cover;
+  background-image: url(/images/home_page/monkey-min.jpg);
+  margin-top: 0px;
+  -webkit-transition: margin 1s ease;
+  -moz-transition: margin 1s ease;
+  -o-transition: margin 1s ease;
+  -ms-transition: margin 1s ease;
+  transition: margin 1s ease;
   -webkit-animation: slide-image 20s;
   -webkit-animation-iteration-count: infinite;
   animation: slide-image 20s;
@@ -206,61 +213,11 @@ main, .notepad-share-icons, .notepad-disqus {
 }
 
 @-webkit-keyframes slide-image {
-  0% {background-image: url('/images/slide/1-min.png')}
-  4% {background-image: url('/images/slide/2-min.png')}
-  8% {background-image: url('/images/slide/3-min.png')}
-  12% {background-image: url('/images/slide/4-min.png')}
-  16% {background-image: url('/images/slide/5-min.png')}
-  20% {background-image: url('/images/slide/6-min.png')}
-  24% {background-image: url('/images/slide/7-min.png')}
-  28% {background-image: url('/images/slide/8-min.png')}
-  32% {background-image: url('/images/slide/9-min.png')}
-  36% {background-image: url('/images/slide/10-min.png')}
-  40% {background-image: url('/images/slide/11-min.png')}
-  44% {background-image: url('/images/slide/12-min.png')}
-  48% {background-image: url('/images/slide/13-min.png')}
-  52% {background-image: url('/images/slide/13-min.png')}
-  56% {background-image: url('/images/slide/12-min.png')}
-  60% {background-image: url('/images/slide/11-min.png')}
-  64% {background-image: url('/images/slide/10-min.png')}
-  68% {background-image: url('/images/slide/9-min.png')}
-  72% {background-image: url('/images/slide/8-min.png')}
-  76% {background-image: url('/images/slide/7-min.png')}
-  80% {background-image: url('/images/slide/6-min.png')}
-  84% {background-image: url('/images/slide/5-min.png')}
-  88% {background-image: url('/images/slide/4-min.png')}
-  92% {background-image: url('/images/slide/3-min.png')}
-  96% {background-image: url('/images/slide/2-min.png')}
-  100% {background-image: url('/images/slide/1-min.png')}
+  margin-top: -200px;
 }
 
 @keyframes slide-image {
-  0% {background-image: url('/images/slide/1-min.png')}
-  4% {background-image: url('/images/slide/2-min.png')}
-  8% {background-image: url('/images/slide/3-min.png')}
-  12% {background-image: url('/images/slide/4-min.png')}
-  16% {background-image: url('/images/slide/5-min.png')}
-  20% {background-image: url('/images/slide/6-min.png')}
-  24% {background-image: url('/images/slide/7-min.png')}
-  28% {background-image: url('/images/slide/8-min.png')}
-  32% {background-image: url('/images/slide/9-min.png')}
-  36% {background-image: url('/images/slide/10-min.png')}
-  40% {background-image: url('/images/slide/11-min.png')}
-  44% {background-image: url('/images/slide/12-min.png')}
-  48% {background-image: url('/images/slide/13-min.png')}
-  52% {background-image: url('/images/slide/13-min.png')}
-  56% {background-image: url('/images/slide/12-min.png')}
-  60% {background-image: url('/images/slide/11-min.png')}
-  64% {background-image: url('/images/slide/10-min.png')}
-  68% {background-image: url('/images/slide/9-min.png')}
-  72% {background-image: url('/images/slide/8-min.png')}
-  76% {background-image: url('/images/slide/7-min.png')}
-  80% {background-image: url('/images/slide/6-min.png')}
-  84% {background-image: url('/images/slide/5-min.png')}
-  88% {background-image: url('/images/slide/4-min.png')}
-  92% {background-image: url('/images/slide/3-min.png')}
-  96% {background-image: url('/images/slide/2-min.png')}
-  100% {background-image: url('/images/slide/1-min.png')}
+  margin-top: -200px;
 }
 
   .notepad-site-head .notepad-site-head-content.with-bg-cover {
