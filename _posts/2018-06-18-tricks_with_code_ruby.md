@@ -12,7 +12,9 @@ imagefile: ruby
 featured: true
 ---
 
-1. Strings
+Hôm nay nhân một ngày đẹp trời mình xin được giới thiệu cho các bạn top những tricks trong Ruby mà những bậc cao nhân hay dùng để tối ưu code hay đôi khi chỉ là làm cho nó nhìn vui hơn (khó đọc hơn) 
+
+## Strings
 
 Sử dụng **%{}** hay **%q{}**
 
@@ -39,7 +41,7 @@ Bên cạnh đó **%q{}** là cách tương tự như việc tạo ra một sing
 => "Tuan \#{2017 + 1}"
 ```
 
-2. Arrays
+## Arrays
 
 **%w** có thể dùng tương tự như sử dụng **String#split**. Nó lấy một string và tách nó thành một mảng dựa vào các khoảng trắng (white space). Tuy nhiên khoảng trắng này cũng có thể được escape. **%W** cũng tương tự nhưng nó cho phép string interpolation.
 
@@ -54,7 +56,7 @@ Bên cạnh đó **%q{}** là cách tương tự như việc tạo ra một sing
 => ["a", "b", "c", "2018"]
 ```
 
-3. Regexes
+## Regexes
 
 Sử dụng **%r** có thể thay thế cho cặp **//** để tạo một đối tượng regexes. Thường cách viết này được dùng khi chúng ta không muốn phải escape dấu **/** chứa bên trong regexes.
 
@@ -65,7 +67,7 @@ Sử dụng **%r** có thể thay thế cho cặp **//** để tạo một đố
 => /a\/b/
 ```
 
-4. Symbol
+## Symbol
 
 **%s** có thể tạo symbol thay vì viết symbol như thế này **:foo**. Cũng như những trường hợp trên, cách viết này loại bỏ vấn đề escaping symbol, tuy nhiên không giống với **:""**, nó không cho phép string interpolation.
 
@@ -78,7 +80,7 @@ Sử dụng **%r** có thể thay thế cho cặp **//** để tạo một đố
 => :"a \#{2017 + 1}"
 ```
 
-5. Shelling out
+## Shelling out
 
 Như ta đã biết, khi text được bao bọc bởi backquotes (kí tự **`**, hay còn gọi là backticks), thì đoạn text được xem như là một literal của double-quoted string. Giá trị của literal đó được truền tới một phương thức đặc biệt tên là Kernel. Phương thức này thực thi dòng lệnh như một câu lệnh shell trên hệ điều hành và trả về kết quả là một string. Thay vì sử dụng backticks ta có thể dùng **%x**, và cũng giống như backticks nó cung cấp cơ chế string interpolation.
 
@@ -91,7 +93,7 @@ Như ta đã biết, khi text được bao bọc bởi backquotes (kí tự **`*
 => "hi 2018\n"
 ```
 
-6. Array#join
+## Array#join
 
 Chúng ta đã nhiều lần được nhìn thấy việc sử dụng Array#* với một số, để nhân kích thước mảng lên bằng cách thêm vào duplicate của nó.
 
@@ -107,7 +109,7 @@ Nhưng bạn có biết rằng thay vì sử dụng số mà dùng một string 
 => "a2b2c"
 ```
 
-7. Lambda literal
+## Lambda literal
 
 Một cách đơn giản và được sử dụng tương đối nhiều trong thời gian gần đây để định nghĩa scope trong Rails, đó là sử dụng kí hiệu ->, hay chính là hiện diện của Lambda Literal, cho phép bạn dễ dàng tạo ra một biểu thức lambda.
 
@@ -117,7 +119,7 @@ Một cách đơn giản và được sử dụng tương đối nhiều trong t
 >> a.call
 => 2018
 ```
-8. Tham số cho method
+## Tham số cho method
 
 ```ruby
   def method  a, *b, **c
@@ -136,7 +138,7 @@ method 1, 2, 3, 4, a: 1, b: 2
 # => [1, [2, 3, 4], {:a=>1, :b=>2}]
 ```
 
-9. Xử lý một object đơn giống như một mảng
+## Xử lý một object đơn giống như một mảng
 
 Đôi khi trong metaprogramming bạn sẽ gặp nhiều trường hợp phải handle dữ liệu một cách linh hoạt, ví dụ với trường hợp này ta muốn xử lý một object đơn hoặc một mảng các objects. Thay vì phải kiểm tra trường hợp loại option nào được truyền vào, bạn có thể sử dụng [*something] hoặcArray(something).
 
@@ -157,7 +159,7 @@ Array(num).each { |s| s }
 Array(num_arr).each { |s| s }
 ```
 
-10. Tham số Hash dạng bắt buộc
+## Tham số Hash dạng bắt buộc
 
 Cái này có bắt đầu từ Ruby 2.0. Thay vì chỉ định nghĩa ra mọt phương thức nhận một hash làm tham số như thế này
 
@@ -174,7 +176,7 @@ def method a:, b:, c: \'default\'
 end
 ```
 
-Chúng ta thử gọi hàm chỉ vớia: 1 thì sẽ thấy không được vì còn thiếu khóa b:
+Chúng ta thử gọi hàm chỉ với a: 1 thì sẽ thấy không được vì còn thiếu khóa b:
 
 ```ruby
 method a: 1
@@ -192,7 +194,7 @@ method hash
 # => [1, 2, 3]
 ```
 
-11. String concatenation
+## String concatenation
 
 Bạn nên bỏ thói quen nối string bằng += mà hãy dùng << thay thế. Mặc dù kết quả là hoàn toàn giống nhau nhưng điểm khác biệt ở đây là gì?
 
@@ -207,9 +209,9 @@ str1.object_id  # => 16241240, id is changed
 str1 << str2
 str1.object_id  # => 16241240, id is the same
 ```
-Khi bạn dùng += Ruby tạo ra một đối tượng tạm thời là kết quả của str1 + str2. Sau đó nó thay thế str1 bằng reference đến đối tượng vừa được tạo. Trong khi đó << sẽ chỉnh sửa trên chính xâu gốc.
+Khi bạn dùng **+=** Ruby tạo ra một đối tượng tạm thời là kết quả của str1 + str2. Sau đó nó thay thế str1 bằng reference đến đối tượng vừa được tạo. Trong khi đó **<<** sẽ chỉnh sửa trên chính xâu gốc.
 
-Do vậy việc sử dụng += tạo ra một vài bất lợi sau đây:
+Do vậy việc sử dụng **+=** tạo ra một vài bất lợi sau đây:
 
 * Thêm công việc tính toán để nối string
 * Một đối tượng string bị thừa trong bộ nhớ (giá trị cũ của str1)
